@@ -1,3 +1,4 @@
+Source : youtube/luis Serrano
 Entropy
 
 1. Consider the three states of water : ice,water, wator vapour. - they have different entropies.
