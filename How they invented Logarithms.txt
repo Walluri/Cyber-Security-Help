@@ -43,7 +43,7 @@ But such tables were made for other numbers too.
 They are not so useful since you can multiply only certain specific numbers with them.
 
 6. Jost multiplied by a small number just fractionally bigger than 1.
-1.00001 = 1 + 1/10000.
+1.00001 = 1 + 1/10000. [ Multiply the right side by this factor ]
 And he kept counting on the left just like other tables.
 
 0-1
@@ -90,24 +90,86 @@ lets take an example 6.0833 * 5.4987 [ This works soemthing like we did to the p
 
 (18,056)	+ 	(17,046)	=	35102 which gets you 33.449 
 
-
-the values are pretty close.
-definetely accurate enough to be useful and much faster than getting the same accuracy by hand.
+The values are pretty close.
+Definetely accurate enough to be useful and much faster than getting the same accuracy by hand.
 This magic of turning multiplication into addition is what makes logarithms as logarithms.
-    we have been using them for that ever since.
+ We have been using them for that ever since.
 
 9. Josts logarithms are called logs base 1.0001
+
+	log 6.083(to the base 1.0001) = 18,056
+		OR 
+	6.083 = (1.0001)^18056
+
     we use a lot of bases too..
+	log 6.083 (to the base 10) = 0.784
+		OR
+	6.083 = 10^0.784
+
+	
     Before calculators base 10 logs were used to solve multiplication problems.
-    Natural logarithms have a base of 2.718 = e.
-    in fact in the beginning it does not seem like a natural base for a logarithm---but,
+
+    Natural logarithms have a base of 2.718, which is prefered by many mathematicians = e.
+
+    In fact in the beginning it does not seem like a natural base for a logarithm---but it kind of IS....!
+
+    LETS TAKE A CLOSER LOOK AT JOST'S ORIGINAL LOGARITHM
+
+   He started with 100 million on the right instead of 1.0 + had nine digits of precision.
+   And he would multiply each with a number of 1 + 1/10,000
+   He would count by 10's on the left and not ones.
+
+
+0-100,000,000
+10-100,010,000
+.
+.
+.
+180,560-608,307,136
+.
+.
+.
 
 
 
+So the ealier problem is as below....
+6.0833 	* 	5.4987
+180,560	* 
+[all the digits are exactly the same.]
 
 
+10. we could scale the numbers differently and still stay with in the spirit of Josts logarithms.
+lets start with 1.0 in the right hand side..
+And for the logarithms on the left instead of scaling them UP by a factor of 10 we can scale them down by a factor of 10,000.
 
+This might seem kind of random but, ... the numbers on the right and the logarithms on the left are changing on the same speed.
+[In the very first step.. both of them go up by 0.0001 ]
+This ties the two sets of numbers together in a way that makes sense, even when the logarithms are not whole numbers.
+So whats the base of these logarithms.
 
+---------------------------------------
+Logarithms	-	Numbers
+0	-	1.00000000
+0.0001	-	1.00010000
+0.0002	-	1.00020001
+..
+.
+.
+.
+.
+1	-	2.718
+.
+.
+.
+.
+---------------------------------------
 
+log2.718 = 1
 
+Note : The base of a number is the number where the log of that number is 1.
 
+log10(10) = 1
+log2(2) = 1
+.. in the above table of Jost log2.718(2.718) = 1.
+
+So natural logarithms are really kind of natural ..!
