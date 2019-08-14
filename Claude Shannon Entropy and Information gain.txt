@@ -1,0 +1,51 @@
+Entropy
+
+1. Consider the three states of water : ice,water, wator vapour. - they have different entropies.
+2. Entropy is the measure of how quickly the particles inside your object are moving.
+3. 
+ice - has low entropy ; as the particles move very slowly
+water - medium ;
+water vapour : high
+
+4.This entropy concept occurs in maths - probability theory
+
+Example : Lets say you have 3 buckets
+bucket 1 : 4 red balls
+bucket 2 : 3 red and 1 blue ball
+bucket 3 : 2 red and 2 blue balls
+
+Which one has low medium and high entropy ?
+How do we find a way to measure entropy here ?
+Fow now lets say that : in how many different ways can we re-arrange this set.
+
+bucket 1 : 1 way only 
+bucket 2 : If you have 4 slots and need to arrange 3 red and 1 blue in them. The number of different ways you can arrange them is below
+	Blue balls can be arranged in 4C3 ways. [4 places for 3 balls]
+	Red balls can be arranged in 1C1 ways. [ remaining 1 place for 1 ball]
+	so total = 4!/(1!*3!) multiplied by 1!/(0!*1!) = 4*1 = 4 ways	
+bucket 3 : 6 ways
+
+In this context you can think of entropy as how much can we re-arrange this set : low medium and high.
+- there is more precise way : based on information.
+
+Explanation:
+If you have to pick a random ball out the above buckets : how much do you know about the ball you are picking.
+bucket 1 :  you know that you will pick a red ball - high knowledge
+bucket 2 :  you know that you can pick a red ball with high probability and blue ball with less probability - medium knowledge
+bucket 3 :  low knowledge
+
+Knowledge and entropy are opposites.
+bucket 1 :  low entropy
+bucket 2 :  medium entropy
+bucket 3 :  high entropy
+
+5. lets device a formulae for entropy based on this concept.
+
+5.1 we have a bucket of 3 red and 1 blue balls 
+     let record what balls we draw from the bucket
+     1 red - put it back
+     1 red - put it back
+     1 red - put it back
+     1 blue - put it back
+
+ 
