@@ -1,2 +1,3 @@
 # Cyber-Security-Help
-Contains all information related to Crytography / Encryption / Hashing / AvailableAlgorithms
+
+The Math and theory behind Crytography / Encryption / Hashing / openSSL
