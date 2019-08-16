@@ -1,0 +1,18 @@
+Source : youtube/GVSUMath
+
+Euclidean Algorithm.
+1. It is a computational process that computes the Greatest common divisor of two positive integers.
+
+2. lets see how it works with a specific example
+
+Lets find the GCD of (54,888).
+
+By looking at the number we can say that it is 2, but is there a greater number.
+
+lets take the larger number and divide it by the smaller number and see what remainder and quotient we get.
+
+888 = 54(16) + 24 [lets shift the divisor and remainder over to the left as below]
+54 = 24(2) +   6 [last non-zero value]
+24 = 6(4) + 0 [do this till you reach zero]
+
+The Euclidean algorithm says once you reach a zero remainder : look to the previous line and the last number is GCD.
