@@ -1,0 +1,66 @@
+Source : youtube/Socratica.
+
+1. Fermats little theorem
+
+If 'p' is a prime number 
++
+p does not divide the integer 'a' 
+then 
+a^(p-1) = 1(modp) [congruent]
+[i.e if you divide a^(p-1) by p , the remainder will always be 1]
+
+Example : 
+p = 5; a = 2;
+5%2 >0 [in this case 2Mod5 is '2']
+So applying fermats little theorem : 2^4 = 1 (Mod 5) ; this will grow into 1
+Note : 'a' and 'p' should be relatively prime : i.e they should not have a common divisor.
+
+2^4 = 1 (Mod 5)
+3^4 = 1 (Mod 5)
+4^4 = 1 (Mod 5)
+5^4 = 0 (Mod 5)
+6^4 = 1 (Mod 5)
+7^4 = 1 (Mod 5)
+.
+.
+.
+10^4 = 0 (Mod 5)
+
+
+Look at all the exponents, they are same. Let see if we have a specific use of this.
+Ex : 
+Lets find the remainder if we divide 3^100,000 by 53
+p = 53 is a prime number and 53 does not divide 3, so we can say 
+
+3^(53-1) = 1(mod53)
+3^52 = 1(mod53)
+
+100,000/52 = R(4) Q(1923)
+
+So 
+(3^52)^1923 = 1^(1923)(mod53)
+3^99996 = 1(mod53)
+
+3^100,000 = 3^4(mod53)
+
+3^100,000 = 81(mod53)
+
+3^100,000 = 28(mod53)
+
+so if you divide (3^100,000)/53 , you will get a remainder of 28.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
