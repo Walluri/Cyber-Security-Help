@@ -1,0 +1,28 @@
+a = b (mod n)
+
+Lets find out what it means.
+
+
+1. 'a' and 'b' have the same 'remainder'(could be negative), when they are divided by 'n'(positive whole number greater then 1).
+10 = 14 mod(4)
+
+10/4 = remainder 2
+14/4 = remainder 3
+
+
+2 this can also be written in the form of an equation
+a = kn + b
+
+10 = k(4)  + 14
+k = -1 in this case
+
+
+3.  
+    a-b = kn
+    n | (a-b) = k
+    a-b is a multiple of n
+
+
+4 | (10-14)
+4 | -4 
+4 | 4(-1)
