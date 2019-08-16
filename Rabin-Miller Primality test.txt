@@ -1,0 +1,48 @@
+1. Miller-Rabin primality test is more frequently used than the fermats primality test, mostly because it given you a higher assurance of primality than the fermats, since they are both probabilistic.
+
+2. There is a version of Miller-Rabin test that is not probabilistic, that assumes the generalized reimman hypothesis.
+
+3. Miller - Rabin is based on : "Basic principle" which states that
+
+if there is a 'x' and a 'y' such that x2=y2(modn) [congruent]
+but x!=y(modn) [not congruent] ; then n is composite.
+
+4. the general algorithm for using this method is to ...
+ 4.1 First find n-1 such that it is expressed as 2^km
+       i.e for a given prime n
+            n-1 = (2^k) * m
+ 4.2 chose a number 'a' such that its 1<a<(n-1)
+ 4.3 Compute b(0) = a^m(modn)
+	    b(1) = b(0)^2(modn)
+	    b(2) = b(1)^2(modn)
+	    b(3) = b(2)^2(modn)
+... and so on till you get 1 or -1
++1 => composite
+-1 => implies probably a prime...!
+
+
+Example :
+Is 561 prime ?
+
+n = 561-1
+step 1 : 561 = 2^k*m
+            561 = 2^4 * 35
+            k=4; and m=35 and n=561;
+step 2 : choose a such that 1<a<561
+            LETS SAY 2 ...
+Step 3 : b(0) = 2^35mod(561) =>263
+
+             b(1) = b(0)^2mod(561)
+                    = 263^2mod(561)
+                    = 166
+
+             b(2) = b(1)^2mod(561)
+                    = 166^2mod(561) 
+	    = 67
+
+             b(3) = b(2)^2mod(561)
+                    = 67^2mod(561)
+	    = 1
+561 is not a prime IT IS COMPOSITE.
+
+
