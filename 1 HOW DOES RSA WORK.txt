@@ -1,0 +1,320 @@
+1. 
+
+e - encrypting exponent
+n - modulus n 
+m - message
+c - cipher text
+d - decypting exponent
+
+client : m^e = c(mod n)
+server : c^d = m(mod n)
+
+Lets see how this works.
+
+e - 13
+d - 37
+n - 77 (7*11)
+
+We are going to share 13 and 77 with the world and we are going to keep 37 which is our private key as our secret.
+
+Now to Encrypt : We are going to raise 8 to the power of 13 with in the modulus of 77
+	          We are going to multiply our message by 8, 13 times, and every time it exceeds 77 we will take a mod(77) of it, and roll it back into range.
+                          simply said : 8^13mod(77) = 50
+
+m	e	c=m^e(modn)
+8	0	1
+	1	8
+	2	64
+	3	50
+	.	.
+	.	.
+	.	.
+	.	.
+	12	64
+	13	50
+
+Now we will send the message 50 over internet, which is the cipher text.
+
+Upon receiving at the server side : we will raise 50 to the power of 37 with in the modulus of 77
+ that means : i am going to take 50 times 50 times 50 ... 37 times and every time it exceeds 77 we rool it back into range.
+			  i.e  we will mulitply the message by 37
+
+c	d	m=c^d(modn)
+50	0 	1mod(77) = 1
+	1	50mod(77) = 50
+	2	2500 mod(77) = 36
+	3	1800 mod(77) = 29
+	4	1450 mod(77) = 64
+	.	..
+	..	...
+	...	....
+	....	.....
+
+	37	asdfsmod(77) = 8
+
+
+Only you have some confidence that i am the only one who can de-crypt it.
+
+
+2.  instead of 8 if we go and encrypt higher and higher values : 
+
+For the given 3 values
+e-13
+d-37
+n-77
+
+m	c			m
+8	50			8
+.	..			...
+.	..			...
+.	..			...
+77	0 ( 77^13(mod77) )		0
+78	1 ( 78^13(mod77) )		1
+79	30 ( 79^13(mod77) )		2
+80 	38 ( 80^13mod77 )		3
+
+If you encrypt higher and higher values... while encrypting 77 you will de-crypt it back to 0.
+
+So you can not encrypt any numbers bigger than your modulus.
+
+You can only encrypt messages that are the key size or smaller.
+
+3. 
+how did you choose e-13 and d-37 and n-77 to make e and d inverses of one another.
+
+3.1 We have the two equations
+
+m^e(modn) = c
+c^d(modn) = m
+
+3.2 lets combine the 2 equations
+
+(m^e)^d = m(modn)
+m^ed = m(modn)
+
+lets say that n is a product of two large primes p and q.
+
+Since n is a product of two primes p and q lets go and have a look at its number line.
+
+The number line 'n' is going to be made up of a bunch of blocks each sizes 'p' - and toal of q blocks
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
+|  p  |  p   |      |      |       |      |      |       |      |       |      |      |      |      |   - q blocks    
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
+                                        ^
+                                        |
+
+		      m^ed
+
+                                       m
+
+*****************
+if m^ed = m (modn) : then it implies that m^ed and m have a common remainder when divided by n and it will be less than n ! [ Read what a modulus means ]
+                             : then that means they land on the same point in this number line
+
+If m^ed = m (modn)  it got to also to be equal to m(modp) and m(modq)
+**************i.e m^ed = m (modp) and m^ed = m (modq)
+
+Now lets take this 1 at a time
+m^ed = m (modp)
+
+It can be written as 
+m^(ed-1) * m = m(modp)
+
+with fermats little theorem we can say that 
+m^(p-1) = 1(modp) if p is a prime and p does not divide m [i.e m is not a multiple of p]
+
+**************Lets go ahead and write ed-1 = h(p-1)  [ i.e h times (p-1) ]
+
+(  (m^(p-1))^h ) * m= m(modp)
+
+Applying fermats little theorem, we get
+
+(1^h) * m = m(modp)
+
+1*m = m(modp) 
+
+Now if you find e and d such that thats the case : then i know that my equation will be satisfied.
+
+Now there is this other side modq ; it has to be the same over there as well
+
+now lets make sure ed-1 is a multiple of both p-1 and q-1
+
+ed-1 = h(p-1)(q-1)
+
+Now coming back to the example : you will understand why 13 and 37 are chosen.
+
+13 *37 -1  = h(7-1)(11-1)
+
+481 -1 	= h *6 * 10
+
+480 = h* 60
+
+480 is a multiple of 60.
+
+Now you have an algorithm for choosing your numbers.
+
+first : choose your primes p and q 
+second : choose e and d such that they are a multiple of (p-1)(q-1)
+
+How are you going to find the primes ?
+ - you can use fermats little theorem 
+      : fermats little theorem is true for a prime modulus.
+        g^(p-1) = 1(modp) - for a given prime and if it does not divide integer g.
+
+Primality test to come up with p and q.
+        By testing a modulus for a lot of bases (g = 2,3,4,5,6,7,8,...).....
+           if you always come up with a number 1 : there is  a pretty good probability that the modulus is prime
+
+How to find e and d ?
+
+we know that ed need to be 1 away from a multiple of (p-1)(q-1)
+
+ed-1 = h(p-1)(q-1)
+ed-1 = h* (7-1)(11-1)
+ed-1 = h* 60
+
+************choose e as 13 : make sure that e has no factors in common with p-1 and q-1
+
+13*d -1 = h60
+
+Now solve for d using the Extended Euclidean algorithm - you will get 37
+
+THIS IS RSA algorithm published in 1977 by 
+R - Ron Rivest
+S - Adi Shamir
+A - Leonard Adleman
+
+[it was developed initially by Clifford cocks in UK and wasnt classified untill 1997]
+
+
+m	c=m^e(modn)
+0	0
+1	1
+2	30
+3	38
+4	53
+5	26
+6	62
+7	35
+8	50
+9	58
+10	10
+11 	11
+12	12
+13	41
+14	49
+15	64
+16	37
+17	73
+18	46
+19 	61
+20	69
+21	21
+22	22
+23	23
+24	52
+25	60
+26	75
+27	48
+28	7
+29	57
+30	72
+31	3
+32	32
+33	33
+34	34
+35	63
+36	71
+37	9
+38	59
+39	18
+40	68
+41	6
+42	14
+43	43
+44	44
+45	45	
+46	74	
+47	5	
+48	20
+49	70
+50	29
+51	2
+52	17
+53	25
+54	54	
+55	55
+56	56
+57	8
+58	16
+59	31
+60	4
+61	40
+62	13
+63	28
+64	36
+65	65
+66	66
+67	67
+68	19
+69	27
+70	42
+71	15
+72	51
+73	24
+74	39
+75	47
+76	76
+77	0
+78	1
+79	30
+80	38
+81	53
+82	26
+83	62	
+84	35	
+85	50
+86	58
+
+Point 1 :
+Notice that when we get to 10 : the message 10,11,12 map to 10,11,12
+Notice that this repeats for the message 21,22,23....
+Notice that this also repeats for 32,33,34....
+Notice that this also repeats for 43,44,45....
+ -------Why is that
+
+Every time we move down the table 11 spaces, its like we are coming back to zero again.
+Its like we are mapping the input back to the output.
+This pattern occurs for every number through out the table.
+
+Point 2 : 
+If you compare a number in the table to a number 11 spaces below it : the difference is always 11 or -66
+if you take -66 in our modulo 77 its 11 again.
+so the difference is always 11.
+
+
+Point 3:
+
+If you subtract every number by a number that occurs 7 spaces below it : the difference is always divisible by 7.
+
+WHY DO YOU THINK THESE TWO PATTERNS OCCUR IN THIS TABLE ????
+
+The modulo 77(i.e n) is made up of 7 and 11. (i.e p and q respectively)
+The modulos of 77 is made up of blocks of modulus 11.... its that each one is offset from a different starting point... ..
+	.....that means you are going to get the same patterns as you look through each of those different blocks.
+
+DO YOU THINK THAT THIS PATTERN IS EASY FOR SOMEONE TO EXPLOIT...?
+
+All they need to do is look for one of those prime numbers (p,q) ...and they will be able to divide the space in to ..those smaller blocks
+Not possible because we use such large prime numbers that it will be very hard for somebody to figure out what one of those two prime numbers is..!
+And if they find out the primes- THEY CAN FIND OUT THE PRIVATE KEY.
+
+
+
+
+
+
+
+
+
