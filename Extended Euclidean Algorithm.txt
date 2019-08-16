@@ -1,0 +1,29 @@
+Extended Euclidean Algorithm.
+
+To explain this we shall see an example of "Euclidean Algorithm" which is used to find the GCD of two integers.
+
+gcd(888,54) = 6 
+
+How ?
+
+888 = 54(16) + 24
+54 = 24(2) + 6 [is the GCD]
+24 = 6(4) + 0
+
+Now:
+lets ignore the last equation express 888 and 54 in terms of the GCD 6
+
+6 = 54 + 24(-2)
+
+6 = 54 + (888 + 54(-16)) -2
+
+6 = 54(1) + 888(-2)  + 54(32)
+
+6 = 54(33) + 888(-2)
+
+
+What we did here is used the result i.e GCD of the euclidean algorithm, and written the GCD as a combination of 54 and 888.
+
+This sort of construction is called a linear combination of the 2 numbers. [will true for every pair of positive integers]
+
+This process of working back is called : Extended Euclidean algorithm.
