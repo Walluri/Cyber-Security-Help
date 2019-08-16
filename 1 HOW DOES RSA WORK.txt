@@ -310,6 +310,8 @@ All they need to do is look for one of those prime numbers (p,q) ...and they wil
 Not possible because we use such large prime numbers that it will be very hard for somebody to figure out what one of those two prime numbers is..!
 And if they find out the primes- THEY CAN FIND OUT THE PRIVATE KEY.
 
+TODO : Why is this a trap door function ? 
+TODO : Why is it hard to crack RSA ?
 
 
 
