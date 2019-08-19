@@ -6,8 +6,8 @@ m - message
 c - cipher text
 d - decypting exponent
 
-client : m^e = c(mod n)
-server : c^d = m(mod n)
+Client : m^e = c(mod n)
+Server : c^d = m(mod n)
 
 Lets see how this works.
 
@@ -37,13 +37,13 @@ Now we will send the message 50 over internet, which is the cipher text.
 
 Upon receiving at the server side : we will raise 50 to the power of 37 with in the modulus of 77
  that means : i am going to take 50 times 50 times 50 ... 37 times and every time it exceeds 77 we rool it back into range.
-			  i.e  we will mulitply the message by 37
+			  i.e  we will mulitply the message by 50, 37 times
 
 c	d	m=c^d(modn)
 50	0 	1mod(77) = 1
 	1	50mod(77) = 50
-	2	2500 mod(77) = 36
-	3	1800 mod(77) = 29
+	2	2500 mod(77) = 36  [50 * 50 mod(77) = 36 ]
+	3	1800 mod(77) = 29  [36 * 50 mod(77) = 29 ]
 	4	1450 mod(77) = 64
 	.	..
 	..	...
