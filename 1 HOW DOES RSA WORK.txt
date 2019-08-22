@@ -96,7 +96,7 @@ lets say that n is a product of two large primes p and q.
 
 Since n is a product of two primes p and q lets go and have a look at its number line.
 
-The number line 'n' is going to be made up of a bunch of blocks each sizes 'p' - and toal of q blocks
+The number line 'n' is going to be made up of a bunch of blocks each sizes 'p' - and total of q blocks
 
 ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
 |  p  |  p   |      |      |       |      |      |       |      |       |      |      |      |      |   - q blocks    
@@ -187,6 +187,7 @@ A - Leonard Adleman
 
 [it was developed initially by Clifford cocks in UK and wasnt classified untill 1997]
 
+Lets get into the details - indepth
 
 m	c=m^e(modn)
 0	0

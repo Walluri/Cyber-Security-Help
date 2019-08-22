@@ -1,0 +1,17 @@
+Diffie - Hellman key exchange : It is named after Whitfield diffe and Martin Hellman.
+
+To understand Diffie - Hellman we need to understand "Primitive root modulo n" concept
+1. Diffie - Hellman key exchange  is a method of securely exchanging cryptographic keys over a public channel.
+2. Its one of the fist public key protocols
+3. The essence : you have a client and a server. they both need to exchange keys - and ultimately come to a shared secret key - so that they can do a bulk excryption and communicate back and forth.
+
+4.	client 			server
+				
+				
+				
+				
+				
+				
+				
+				
+								
