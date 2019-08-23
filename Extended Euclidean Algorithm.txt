@@ -27,3 +27,7 @@ What we did here is used the result i.e GCD of the euclidean algorithm, and writ
 This sort of construction is called a linear combination of the 2 numbers. [will true for every pair of positive integers]
 
 This process of working back is called : Extended Euclidean algorithm.
+
+Thus extended Euclidean algorithm is an algorithm to compute integers x and y such that ax + by = GCD(a,b), given a,b
+
+The Extended Euclidean algorithm can be viewed as the reciprocal of modular exponentiation.
