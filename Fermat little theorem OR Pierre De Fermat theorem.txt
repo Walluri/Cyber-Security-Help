@@ -1,6 +1,6 @@
 Source : youtube/Socratica.
 
-1. Fermats little theorem
+1. Fermats little theorem [this theorem was presented with out proof.  Leonhard Euler (Euler's function and Eulers theorem) published his proof of Fermat's little theorem]
 
 If 'p' is a prime number 
 +

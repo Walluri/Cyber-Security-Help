@@ -1,0 +1,15 @@
+source : wiki 
+
+Eulers theorem (or Fermat-Euler theorem / Eulers totient theorem) in number theory.
+
+First let see Eulers totient function : 
+- This function counts the positive integers up to a given integer n - that are Relatively Prime to n.
+- it is written using the letter phi - and may be called Eulers phi function.
+- in other words this phi(n) finds all the numbers below and including nfor which the GCD is 1.
+- All the numbers thus found are called totatives of n.
+
+Eulers totient function : is a multiplicative function.
+- which means that if two numbers m and n are relatively prime, then phi(mn) = phi(m)*phi(n)
+- and for a prime phi(m)= (m-1) [See the primitive root modulo concept.]
+ 
+what does it state ? : if n and a are co-prime positive integers then 
