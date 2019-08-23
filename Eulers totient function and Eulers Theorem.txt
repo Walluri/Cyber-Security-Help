@@ -1,0 +1,45 @@
+source : wiki 
+
+
+First let see Eulers totient function : 
+- This function counts the positive integers up to a given integer n - that are Relatively Prime to n.
+- it is written using the letter phi - and may be called Eulers phi function.
+- in other words this phi(n) finds all the numbers below n for which the GCD is 1.
+- All the numbers thus found are called totatives of n.
+
+Eulers totient function : is a multiplicative function.
+- which means that if two numbers m and n are relatively prime, then phi(mn) = phi(m)*phi(n)
+- and for a prime phi(m)= (m-1) [See the primitive root modulo concept.]
+- this function gives the order of the 'multiplicative group of integers modulo n(a group of units)'[See the primitive root modulo concept again.]
+
+
+Eulers theorem (or Fermat-Euler theorem / Eulers totient theorem) in number theory.
+what does it state ? : if n and a are co-prime positive integers then a^(phi(n))    =c   1(modn)     [note : =c means congruence]
+
+- This theorem may be used to easily reduce large powers modulo n.
+- for Example Lets find the ones place decimal digit of 7^222 i.e 7^222(mod10).
+- The integers 7,10 are co-prime then as per Eulers function phi(10) = 4;
+- =c means congruent
+- So Eulers Theorem states that 7^4     =c    1 (mod10).
+- 7^222 can be written as 7^(4*55+2)  =c  1^11 * 7^2 
+			           =  49 (mod10)
+			           =c  9 (mod10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
